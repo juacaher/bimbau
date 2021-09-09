@@ -4,17 +4,11 @@ Cypress.Commands.add("authenticate", (email, documentid, firstname, lastname, ce
     cy.get(loginPage.TOAST_BUTTON).click();
     cy.wait(5000);
     cy.get(loginPage.REGISTER_RBUTTON).click();
-    cy.wait(10000);
     cy.get(loginPage.EMAIL_FIELD).type(email);
-    cy.wait(3000);
     cy.xpath(loginPage.DOC_FIELD).click({ force: true });
-    cy.wait(3000);
     cy.scrollTo(0, 100);
-    cy.wait(3000);
     cy.xpath(loginPage.DOC_FIELD).type('{downarrow}');
-    cy.wait(3000);
     cy.xpath(loginPage.DOCUMENT_FIELD).type(documentid);
-    cy.wait(3000);
     cy.scrollTo(0, 500);
     cy.wait(3000);
     cy.get(loginPage.NAME_FIELD).type(firstname);
